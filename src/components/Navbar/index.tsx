@@ -1,17 +1,3 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
@@ -25,7 +11,7 @@ const navigation = {
   categories: [
     {
       id: "women",
-      name: "Women",
+      name: "Software",
       featured: [
         {
           name: "New Arrivals",
@@ -87,7 +73,7 @@ const navigation = {
     },
     {
       id: "men",
-      name: "Men",
+      name: "Hardware",
       featured: [
         {
           name: "New Arrivals",
@@ -263,7 +249,7 @@ export default function Example() {
                               {section.name}
                             </p>
                             <ul
-                              role="list"
+                              // role="list"
                               aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
                               className="mt-6 flex flex-col space-y-6"
                             >
@@ -301,7 +287,7 @@ export default function Example() {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/log-in"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
                       Sign in
@@ -309,7 +295,7 @@ export default function Example() {
                   </div>
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/log-in"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
                       Create account
@@ -318,7 +304,7 @@ export default function Example() {
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
+                  <a href="/" className="-m-2 flex items-center p-2">
                     <img
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
@@ -359,13 +345,9 @@ export default function Example() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <a href="/">
                   <span className="sr-only">Your Company</span>
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt=""
-                  />
+                  <img className="h-8 w-auto" src="/logo.png" alt="" />
                 </a>
               </div>
 
@@ -450,7 +432,7 @@ export default function Example() {
                                             {section.name}
                                           </p>
                                           <ul
-                                            role="list"
+                                            // role="list"
                                             aria-labelledby={`${section.name}-heading`}
                                             className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                           >
@@ -496,14 +478,14 @@ export default function Example() {
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <a
-                    href="#"
+                    href="/log-in"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Sign in
                   </a>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <a
-                    href="#"
+                    href="/log-in"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Create account

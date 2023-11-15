@@ -1,6 +1,6 @@
-import React , { useState } from 'react'
-import { StarIcon } from '@heroicons/react/20/solid'
-import { RadioGroup , Dialog, Transition } from '@headlessui/react'
+import React, { useState } from "react";
+// import { StarIcon } from '@heroicons/react/20/solid'
+import { RadioGroup, Dialog, Transition } from "@headlessui/react";
 
 // const StarIcon = <svg id="Capa_1" enable-background="new 0 0 320.001 320.001" viewBox="0 0 320.001 320.001" xmlns="http://www.w3.org/2000/svg"><path d="m295.84 146.049-256-144c-4.96-2.784-11.008-2.72-15.904.128-4.928 2.88-7.936 8.128-7.936 13.824v288c0 5.696 3.008 10.944 7.936 13.824 2.496 1.44 5.28 2.176 8.064 2.176 2.688 0 5.408-.672 7.84-2.048l256-144c5.024-2.848 8.16-8.16 8.16-13.952s-3.136-11.104-8.16-13.952z"/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></svg>
 // const RadioGroup = <svg id="Capa_1" enable-background="new 0 0 565.648 565.648" height="512" viewBox="0 0 565.648 565.648" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m282.824 0c-155.947 0-282.824 126.877-282.824 282.824s126.877 282.824 282.824 282.824 282.824-126.877 282.824-282.824-126.877-282.824-282.824-282.824zm0 494.942c-116.969 0-212.118-95.15-212.118-212.118s95.15-212.118 212.118-212.118 212.118 95.149 212.118 212.118-95.149 212.118-212.118 212.118z"/><path d="m382.818 182.831c55.225 55.225 55.225 144.762 0 199.987s-144.762 55.225-199.987 0-55.225-144.762 0-199.987 144.762-55.225 199.987 0"/></svg>
@@ -40,68 +40,68 @@ interface Product {
   details: string;
 }
 const product: Product = {
-  name: 'Polo T-Shirt',
-  price: '$192',
-  href: '#',
+  name: "Polo T-Shirt",
+  price: "$192",
+  href: "#",
   breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
+    { id: 1, name: "Men", href: "#" },
+    { id: 2, name: "Clothing", href: "#" },
   ],
   images: [
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-      alt: 'Two each of gray, white, and black shirts laying flat.',
+      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
+      alt: "Two each of gray, white, and black shirts laying flat.",
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
-      alt: 'Model wearing plain black basic tee.',
+      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
+      alt: "Model wearing plain black basic tee.",
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
-      alt: 'Model wearing plain gray basic tee.',
+      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
+      alt: "Model wearing plain gray basic tee.",
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
-      alt: 'Model wearing plain white basic tee.',
+      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
+      alt: "Model wearing plain white basic tee.",
     },
   ],
   colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-    { name: 'Red', class: 'bg-red-900', selectedClass: 'ring-gray-900' },
-    { name: 'Green', class: 'bg-green-900', selectedClass: 'ring-gray-900' },
+    { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+    { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+    { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    { name: "Red", class: "bg-red-900", selectedClass: "ring-gray-900" },
+    { name: "Green", class: "bg-green-900", selectedClass: "ring-gray-900" },
   ],
   sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
+    { name: "XXS", inStock: false },
+    { name: "XS", inStock: true },
+    { name: "S", inStock: true },
+    { name: "M", inStock: true },
+    { name: "L", inStock: true },
+    { name: "XL", inStock: true },
+    { name: "2XL", inStock: true },
+    { name: "3XL", inStock: true },
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
   highlights: [
-    'Hand cut and sewn locally',
-    'Dyed with our proprietary colors',
-    'Pre-washed & pre-shrunk',
-    'Ultra-soft 100% cotton',
+    "Hand cut and sewn locally",
+    "Dyed with our proprietary colors",
+    "Pre-washed & pre-shrunk",
+    "Ultra-soft 100% cotton",
   ],
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-}
-const reviews = { href: '#', average: 4, totalCount: 117 }
+};
+// const reviews = { href: "#", average: 4, totalCount: 117 };
 
 function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function CustomProduct() {
-  const [selectedColor, setSelectedColor] = useState(product.colors[0])
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
+  const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 
   // Modal
   const [isOpen, setIsOpen] = useState(false);
@@ -113,8 +113,6 @@ export default function CustomProduct() {
   const openModal = () => {
     setIsOpen(true);
   };
-
-  
 
   return (
     <div className="bg-white">
@@ -185,7 +183,9 @@ export default function CustomProduct() {
         {/* Product info */}
         <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
           <div className="lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+              {product.name}
+            </h1>
           </div>
 
           {/* Options */}
@@ -221,8 +221,14 @@ export default function CustomProduct() {
               <div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
-                <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
-                  <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
+                <RadioGroup
+                  value={selectedColor}
+                  onChange={setSelectedColor}
+                  className="mt-4"
+                >
+                  <RadioGroup.Label className="sr-only">
+                    Choose a color
+                  </RadioGroup.Label>
                   <div className="flex items-center space-x-3">
                     {product.colors.map((color) => (
                       <RadioGroup.Option
@@ -231,9 +237,9 @@ export default function CustomProduct() {
                         className={({ active, checked }) =>
                           classNames(
                             color.selectedClass,
-                            active && checked ? 'ring ring-offset-1' : '',
-                            !active && checked ? 'ring-2' : '',
-                            'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none'
+                            active && checked ? "ring ring-offset-1" : "",
+                            !active && checked ? "ring-2" : "",
+                            "relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none"
                           )
                         }
                       >
@@ -244,7 +250,7 @@ export default function CustomProduct() {
                           aria-hidden="true"
                           className={classNames(
                             color.class,
-                            'h-8 w-8 rounded-full border border-black border-opacity-10'
+                            "h-8 w-8 rounded-full border border-black border-opacity-10"
                           )}
                         />
                       </RadioGroup.Option>
@@ -257,13 +263,22 @@ export default function CustomProduct() {
               <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                  <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                  <a
+                    href="#"
+                    className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                  >
                     Size guide
                   </a>
                 </div>
 
-                <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
-                  <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
+                <RadioGroup
+                  value={selectedSize}
+                  onChange={setSelectedSize}
+                  className="mt-4"
+                >
+                  <RadioGroup.Label className="sr-only">
+                    Choose a size
+                  </RadioGroup.Label>
                   <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                     {product.sizes.map((size) => (
                       <RadioGroup.Option
@@ -273,22 +288,26 @@ export default function CustomProduct() {
                         className={({ active }) =>
                           classNames(
                             size.inStock
-                              ? 'cursor-pointer bg-white text-gray-900 shadow-sm'
-                              : 'cursor-not-allowed bg-gray-50 text-gray-200',
-                            active ? 'ring-2 ring-indigo-500' : '',
-                            'group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6'
+                              ? "cursor-pointer bg-white text-gray-900 shadow-sm"
+                              : "cursor-not-allowed bg-gray-50 text-gray-200",
+                            active ? "ring-2 ring-indigo-500" : "",
+                            "group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6"
                           )
                         }
                       >
                         {({ active, checked }) => (
                           <>
-                            <RadioGroup.Label as="span">{size.name}</RadioGroup.Label>
+                            <RadioGroup.Label as="span">
+                              {size.name}
+                            </RadioGroup.Label>
                             {size.inStock ? (
                               <span
                                 className={classNames(
-                                  active ? 'border' : 'border-2',
-                                  checked ? 'border-indigo-500' : 'border-transparent',
-                                  'pointer-events-none absolute -inset-px rounded-md'
+                                  active ? "border" : "border-2",
+                                  checked
+                                    ? "border-indigo-500"
+                                    : "border-transparent",
+                                  "pointer-events-none absolute -inset-px rounded-md"
                                 )}
                                 aria-hidden="true"
                               />
@@ -303,7 +322,13 @@ export default function CustomProduct() {
                                   preserveAspectRatio="none"
                                   stroke="currentColor"
                                 >
-                                  <line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
+                                  <line
+                                    x1={0}
+                                    y1={100}
+                                    x2={100}
+                                    y2={0}
+                                    vectorEffect="non-scaling-stroke"
+                                  />
                                 </svg>
                               </span>
                             )}
@@ -356,8 +381,9 @@ export default function CustomProduct() {
                           </Dialog.Title>
                           <div className="mt-2">
                             <p className="text-sm text-gray-500">
-                              Your payment has been successfully submitted. We’ve sent
-                              you an email with all of the details of your order.
+                              Your payment has been successfully submitted.
+                              We’ve sent you an email with all of the details of
+                              your order.
                             </p>
                           </div>
 
@@ -365,19 +391,36 @@ export default function CustomProduct() {
                           <div className="mt-4">
                             <form>
                               <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                                <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                <label className="block text-gray-700 text-sm font-bold mb-2">
+                                  Name
+                                </label>
+                                <input
+                                  type="text"
+                                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                />
                               </div>
                               <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                                <input type="email" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                <label className="block text-gray-700 text-sm font-bold mb-2">
+                                  Email
+                                </label>
+                                <input
+                                  type="email"
+                                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                />
                               </div>
                               <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">Phone</label>
-                                <input type="tel" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                <label className="block text-gray-700 text-sm font-bold mb-2">
+                                  Phone
+                                </label>
+                                <input
+                                  type="tel"
+                                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                />
                               </div>
                               <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">Comment</label>
+                                <label className="block text-gray-700 text-sm font-bold mb-2">
+                                  Comment
+                                </label>
                                 <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                               </div>
                             </form>
@@ -389,7 +432,7 @@ export default function CustomProduct() {
                               className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                               onClick={closeModal}
                             >
-                              Order 
+                              Order
                             </button>
                           </div>
                         </Dialog.Panel>
@@ -456,7 +499,6 @@ export default function CustomProduct() {
             </form>
           </div>
 
-
           <div className="py-10  lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
             <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
               <img
@@ -465,7 +507,7 @@ export default function CustomProduct() {
                 className="h-full w-full object-cover object-center"
               />
             </div>
-            
+
             {/* <div>
               <h3 className="sr-only">Description</h3>
 
@@ -499,5 +541,5 @@ export default function CustomProduct() {
         </div>
       </div>
     </div>
-  )
+  );
 }
