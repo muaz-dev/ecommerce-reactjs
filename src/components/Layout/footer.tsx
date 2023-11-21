@@ -62,7 +62,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       1on1 Coaching
@@ -71,7 +71,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Company Review
@@ -80,7 +80,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Accounts Review
@@ -89,7 +89,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       HR Consulting
@@ -98,7 +98,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       SEO Optimisation
@@ -113,7 +113,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       About
@@ -122,7 +122,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Meet the Team
@@ -131,7 +131,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Accounts Review
@@ -146,7 +146,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Contact
@@ -155,7 +155,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       FAQs
@@ -164,7 +164,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Live Chat
@@ -179,7 +179,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Accessibility
@@ -188,7 +188,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Returns Policy
@@ -197,7 +197,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Refund Policy
@@ -206,7 +206,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Hiring Statistics
@@ -221,7 +221,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Marketing Calendar
@@ -230,7 +230,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       SEO Infographics
@@ -368,7 +368,7 @@ function Footer() {
               <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="text-gray-500 transition hover:opacity-75"
                   >
                     Terms & Conditions
@@ -377,7 +377,7 @@ function Footer() {
 
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="text-gray-500 transition hover:opacity-75"
                   >
                     Privacy Policy
@@ -386,7 +386,7 @@ function Footer() {
 
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="text-gray-500 transition hover:opacity-75"
                   >
                     Cookies

@@ -9,71 +9,71 @@ import {
 
 const navigation = {
   categories: [
+    // {
+    //   id: "women",
+    //   name: "Software",
+    //   featured: [
+    //     {
+    //       name: "New Arrivals",
+    //       href: "#",
+    //       imageSrc:
+    //         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
+    //       imageAlt:
+    //         "Models sitting back to back, wearing Basic Tee in black and bone.",
+    //     },
+    //     {
+    //       name: "Basic Tees",
+    //       href: "#",
+    //       imageSrc:
+    //         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
+    //       imageAlt:
+    //         "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
+    //     },
+    //   ],
+    //   sections: [
+    //     {
+    //       id: "clothing",
+    //       name: "Clothing",
+    //       items: [
+    //         { name: "Tops", href: "#" },
+    //         { name: "Dresses", href: "#" },
+    //         { name: "Pants", href: "#" },
+    //         { name: "Denim", href: "#" },
+    //         { name: "Sweaters", href: "#" },
+    //         { name: "T-Shirts", href: "#" },
+    //         { name: "Jackets", href: "#" },
+    //         { name: "Activewear", href: "#" },
+    //         { name: "Browse All", href: "#" },
+    //       ],
+    //     },
+    //     {
+    //       id: "accessories",
+    //       name: "Accessories",
+    //       items: [
+    //         { name: "Watches", href: "#" },
+    //         { name: "Wallets", href: "#" },
+    //         { name: "Bags", href: "#" },
+    //         { name: "Sunglasses", href: "#" },
+    //         { name: "Hats", href: "#" },
+    //         { name: "Belts", href: "#" },
+    //       ],
+    //     },
+    //     {
+    //       id: "brands",
+    //       name: "Brands",
+    //       items: [
+    //         { name: "Full Nelson", href: "#" },
+    //         { name: "My Way", href: "#" },
+    //         { name: "Re-Arranged", href: "#" },
+    //         { name: "Counterfeit", href: "#" },
+    //         { name: "Significant Other", href: "#" },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
-      id: "women",
-      name: "Software",
-      featured: [
-        {
-          name: "New Arrivals",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
-          imageAlt:
-            "Models sitting back to back, wearing Basic Tee in black and bone.",
-        },
-        {
-          name: "Basic Tees",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
-          imageAlt:
-            "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
-        },
-      ],
-      sections: [
-        {
-          id: "clothing",
-          name: "Clothing",
-          items: [
-            { name: "Tops", href: "#" },
-            { name: "Dresses", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Denim", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
-        },
-        {
-          id: "accessories",
-          name: "Accessories",
-          items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
-          ],
-        },
-        {
-          id: "brands",
-          name: "Brands",
-          items: [
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Significant Other", href: "#" },
-          ],
-        },
-      ],
-    },
-    {
-      id: "men",
-      name: "Hardware",
+      id: "product",
+      name: "Product",
       featured: [
         {
           name: "New Arrivals",
@@ -94,46 +94,46 @@ const navigation = {
       ],
       sections: [
         {
-          id: "clothing",
-          name: "Clothing",
+          id: "software",
+          name: "Software",
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
+            { name: "Salesforce", href: "#" },
+            { name: "SAP ERP", href: "#" },
+            { name: "Trello", href: "#" },
+            { name: "QuickBooks", href: "#" },
+            { name: "HubSpot", href: "#" },
+            { name: "Microsoft Power BI", href: "#" },
+            { name: "ESET NOD32", href: "#" },
+          ],
+        },
+        {
+          id: "hardware",
+          name: "Hardware",
+          items: [
+            { name: "Microsoft Surface Laptop Studio", href: "#" },
+            { name: "HP Spectre x360", href: "#" },
+            { name: "Lenovo ThinkPad X1 Extreme", href: "#" },
+            { name: "Dell XPS 15", href: "#" },
+            { name: "Apple MacBook Pro", href: "#" },
+            { name: "ASUS b9", href: "#" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
-          ],
-        },
-        {
-          id: "brands",
-          name: "Brands",
-          items: [
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
+            { name: "Galaxy Buds2", href: "#" },
+            { name: "Dell UltraSharp U2723QE", href: "#" },
+            { name: "Keychron K3 Wireless Mechanical Keyboard", href: "#" },
+            { name: "Logitech MX Master 3S", href: "#" },
           ],
         },
       ],
     },
   ],
   pages: [
-    { name: "Company", href: "#" },
     { name: "Stores", href: "#" },
+    { name: "Company", href: "#" },
   ],
 };
 
@@ -145,7 +145,7 @@ export default function Example() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white z-50">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -209,7 +209,7 @@ export default function Example() {
                     {navigation.categories.map((category) => (
                       <Tab.Panel
                         key={category.name}
-                        className="space-y-10 px-4 pb-8 pt-10"
+                        className="space-y-10 px-4 pb-8 pt-10 z-50 bg-white "
                       >
                         <div className="grid grid-cols-2 gap-x-4">
                           {category.featured.map((item) => (
@@ -387,7 +387,7 @@ export default function Example() {
                                 aria-hidden="true"
                               />
 
-                              <div className="relative bg-white">
+                              <div className="relative bg-white  z-50 ">
                                 <div className="mx-auto max-w-7xl px-8">
                                   <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                                     <div className="col-start-2 grid grid-cols-2 gap-x-8">
@@ -494,7 +494,7 @@ export default function Example() {
 
                 <div className="hidden lg:ml-8 lg:flex">
                   <a
-                    href="#"
+                    href="/"
                     className="flex items-center text-gray-700 hover:text-gray-800"
                   >
                     <img
@@ -509,7 +509,7 @@ export default function Example() {
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                  <a href="/" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
@@ -520,7 +520,7 @@ export default function Example() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                  <a href="/" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"

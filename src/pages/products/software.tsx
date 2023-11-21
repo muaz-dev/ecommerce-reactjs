@@ -22,7 +22,7 @@
   }
   ```
 */
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Remove/Navbar";
 const products = [
   {
     id: 1,
