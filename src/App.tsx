@@ -9,6 +9,11 @@ import Software from "./pages/products/software";
 import NotFount from "./pages/not-found";
 import Profile from "./pages/porfile";
 import CreateAccount from "./pages/account/create-account";
+import FAQs from "./pages/FAQs";
+import ReturnPolicy from "./pages/legal/return-policy";
+import RefundPolicy from "./pages/legal/refund-policy";
+import TermOfUse from "./pages/legal/terms-of-use";
+import PrivacyPolicy from "./pages/legal/privacy-policy";
 
 function App() {
   return (
@@ -36,6 +41,11 @@ function App() {
         <Route path="/account/create" element={<CreateAccount />} />
         <Route path="/software" element={<Software />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/faq" element={<FAQs />} />
+        <Route path="/legal/return-policy" element={<ReturnPolicy />} />
+        <Route path="/legal/refund-policy" element={<RefundPolicy />} />
+        <Route path="/legal/terms-of-use" element={<TermOfUse />} />
+        <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );

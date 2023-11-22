@@ -155,7 +155,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/faq"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       FAQs
@@ -179,16 +179,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="/"
-                      className="text-gray-700 transition hover:opacity-75"
-                    >
-                      Accessibility
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      href="/"
+                      href="/legal/return-policy"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Returns Policy
@@ -197,19 +188,26 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/legal/refund-policy"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Refund Policy
                     </a>
                   </li>
-
                   <li>
                     <a
-                      href="/"
+                      href="/legal/terms-of-use"
                       className="text-gray-700 transition hover:opacity-75"
                     >
-                      Hiring Statistics
+                      Terms of Use
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/legal/privacy-policy"
+                      className="text-gray-700 transition hover:opacity-75"
+                    >
+                      Privacy Policy
                     </a>
                   </li>
                 </ul>

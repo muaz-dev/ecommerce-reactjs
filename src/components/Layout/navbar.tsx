@@ -211,7 +211,7 @@ export default function Example() {
                         key={category.name}
                         className="space-y-10 px-4 pb-8 pt-10 z-50 bg-white "
                       >
-                        <div className="grid grid-cols-2 gap-x-4">
+                        {/* <div className="grid grid-cols-2 gap-x-4">
                           {category.featured.map((item) => (
                             <div
                               key={item.name}
@@ -239,7 +239,7 @@ export default function Example() {
                               </p>
                             </div>
                           ))}
-                        </div>
+                        </div> */}
                         {category.sections.map((section) => (
                           <div key={section.name}>
                             <p
@@ -387,10 +387,10 @@ export default function Example() {
                                 aria-hidden="true"
                               />
 
-                              <div className="relative bg-white  z-50 ">
+                              <div className="relative bg-white z-50">
                                 <div className="mx-auto max-w-7xl px-8">
-                                  <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
-                                    <div className="col-start-2 grid grid-cols-2 gap-x-8">
+                                  <div className="grid grid-cols-1 gap-x-8 gap-y-10 py-16">
+                                    {/* <div className="col-start-2 grid grid-cols-2 gap-x-8">
                                       {category.featured.map((item) => (
                                         <div
                                           key={item.name}
@@ -421,7 +421,7 @@ export default function Example() {
                                           </p>
                                         </div>
                                       ))}
-                                    </div>
+                                    </div> */}
                                     <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
                                       {category.sections.map((section) => (
                                         <div key={section.name}>
