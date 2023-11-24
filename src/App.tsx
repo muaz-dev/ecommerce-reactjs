@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Authentication/login";
 // import Ecommenrce from "./components/Ecommerce";
 import Home from "./pages/home";
-import Software from "./pages/products/software";
+// import Software from "./pages/products/software";
 import NotFount from "./pages/not-found";
 import Profile from "./pages/porfile";
 import CreateAccount from "./pages/account/create-account";
@@ -14,6 +14,9 @@ import ReturnPolicy from "./pages/legal/return-policy";
 import RefundPolicy from "./pages/legal/refund-policy";
 import TermOfUse from "./pages/legal/terms-of-use";
 import PrivacyPolicy from "./pages/legal/privacy-policy";
+import Contact from "./pages/contact";
+import Cart from "./pages/checkout/cart";
+import Products from "./pages/products";
 
 function App() {
   return (
@@ -39,13 +42,17 @@ function App() {
         /> */}
         <Route path="/log-in" element={<Login />} />
         <Route path="/account/create" element={<CreateAccount />} />
-        <Route path="/software" element={<Software />} />
+        {/* <Route path="/software" element={<Software />} /> */}
         <Route path="/profile" element={<Profile />} />
         <Route path="/faq" element={<FAQs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/legal/return-policy" element={<ReturnPolicy />} />
         <Route path="/legal/refund-policy" element={<RefundPolicy />} />
         <Route path="/legal/terms-of-use" element={<TermOfUse />} />
         <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/checkout/cart" element={<Cart />} />
+        <Route path="/product" element={<Products />} />
+        <Route path="/product/:id" element={<Products />} />
       </Routes>
     </Router>
   );

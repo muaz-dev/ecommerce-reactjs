@@ -146,7 +146,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="/"
+                      href="/contact"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Contact

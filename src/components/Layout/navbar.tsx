@@ -97,35 +97,50 @@ const navigation = {
           id: "software",
           name: "Software",
           items: [
-            { name: "Salesforce", href: "#" },
-            { name: "SAP ERP", href: "#" },
-            { name: "Trello", href: "#" },
-            { name: "QuickBooks", href: "#" },
-            { name: "HubSpot", href: "#" },
-            { name: "Microsoft Power BI", href: "#" },
-            { name: "ESET NOD32", href: "#" },
+            { name: "Salesforce", href: "/product/salesforce" },
+            { name: "SAP ERP", href: "/product/sap-erp" },
+            { name: "Trello", href: "/product/trello" },
+            { name: "QuickBooks", href: "/product/quickbooks" },
+            { name: "HubSpot", href: "/product/hubspot" },
+            { name: "Microsoft Power BI", href: "/product/microsoft-power-bi" },
+            { name: "ESET NOD32", href: "/product/eset-nod32" },
           ],
         },
         {
           id: "hardware",
           name: "Hardware",
           items: [
-            { name: "Microsoft Surface Laptop Studio", href: "#" },
-            { name: "HP Spectre x360", href: "#" },
-            { name: "Lenovo ThinkPad X1 Extreme", href: "#" },
-            { name: "Dell XPS 15", href: "#" },
-            { name: "Apple MacBook Pro", href: "#" },
-            { name: "ASUS b9", href: "#" },
+            {
+              name: "Microsoft Surface Laptop Studio",
+              href: "/product/microsoft-surface-laptop-studio",
+            },
+            { name: "HP Spectre x360", href: "/product/hp-spectre-x360" },
+            {
+              name: "Lenovo ThinkPad X1 Extreme",
+              href: "/product/lenovo-thinkpad-x1-extreme",
+            },
+            { name: "Dell XPS 15", href: "/product/dell-xps-15" },
+            { name: "Apple MacBook Pro", href: "/product/macbook" },
+            { name: "ASUS b9", href: "/product/asus-b9" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Galaxy Buds2", href: "#" },
-            { name: "Dell UltraSharp U2723QE", href: "#" },
-            { name: "Keychron K3 Wireless Mechanical Keyboard", href: "#" },
-            { name: "Logitech MX Master 3S", href: "#" },
+            { name: "Galaxy Buds2", href: "/product/galaxy-buds2" },
+            {
+              name: "Dell UltraSharp U2723QE",
+              href: "/product/dell-ultrasharp-u2723qe",
+            },
+            {
+              name: "Keychron K3 Wireless Mechanical Keyboard",
+              href: "/product/keychron-k3",
+            },
+            {
+              name: "Logitech MX Master 3S",
+              href: "/product/logitech-mx-master-3s",
+            },
           ],
         },
       ],
@@ -520,7 +535,10 @@ export default function Example() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="/" className="group -m-2 flex items-center p-2">
+                  <a
+                    href="/checkout/cart"
+                    className="group -m-2 flex items-center p-2"
+                  >
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
