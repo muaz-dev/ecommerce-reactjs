@@ -1,6 +1,7 @@
 export const products = [
   {
     id: "salesforce",
+    category: "software",
     name: "Salesforce CRM",
     price: 199,
     packages: [
@@ -28,6 +29,7 @@ export const products = [
   },
   {
     id: "hubspot",
+    category: "software",
     name: "HubSpot",
     price: "Free with Premium Plans",
     packages: [
@@ -55,6 +57,7 @@ export const products = [
   },
   {
     id: "trello",
+    category: "software",
     name: "Trello",
     price: "Free with Premium Plans",
     packages: [
@@ -82,6 +85,7 @@ export const products = [
 
   {
     id: "quickbooks",
+    category: "software",
     name: "QuickBooks",
     price: "Varies Based on Plan",
     packages: [
@@ -109,6 +113,7 @@ export const products = [
   },
   {
     id: "eset-nod32",
+    category: "software",
     name: "ESET NOD32 Antivirus",
     price: "Varies Based on Plan",
     packages: [
@@ -135,6 +140,7 @@ export const products = [
   },
   {
     id: "microsoft-power-bi",
+    category: "software",
     name: "Microsoft Power BI",
     price: "Varies Based on Plan",
     packages: [
@@ -161,6 +167,7 @@ export const products = [
   },
   {
     id: "sap-erp",
+    category: "software",
     name: "SAP ERP",
     price: "Custom Pricing",
     packages: [
@@ -187,6 +194,7 @@ export const products = [
   },
   {
     id: "macbook",
+    category: "hardware",
     name: "MacBook",
     price: 1234,
     packages: [],
@@ -217,6 +225,7 @@ export const products = [
   },
   {
     id: "microsoft-surface-laptop-studio",
+    category: "hardware",
     name: "Microsoft Surface Laptop Studio",
     price: 1599,
     packages: [],
@@ -245,6 +254,7 @@ export const products = [
   },
   {
     id: "hp-spectre-x360",
+    category: "hardware",
     name: "HP Spectre x360",
     price: 1249,
     packages: [],
@@ -286,6 +296,7 @@ export const products = [
   },
   {
     id: "lenovo-thinkpad-x1-extreme",
+    category: "hardware",
     name: "Lenovo ThinkPad X1 Extreme",
     price: 1749,
     packages: [],
@@ -310,6 +321,7 @@ export const products = [
   },
   {
     id: "dell-xps-15",
+    category: "hardware",
     name: "Dell XPS 15",
     price: 1850,
     packages: [],
@@ -334,6 +346,7 @@ export const products = [
   },
   {
     id: "asus-b9",
+    category: "hardware",
     name: "ASUS ExpertBook B9",
     price: 1499,
     packages: [],
@@ -362,6 +375,7 @@ export const products = [
   },
   {
     id: "galaxy-buds2",
+    category: "hardware",
     name: "Galaxy Buds2",
     price: 149.99,
     packages: [],
@@ -397,6 +411,7 @@ export const products = [
   },
   {
     id: "dell-ultrasharp-u2723qe",
+    category: "accessories",
     name: "Dell UltraSharp U2723QE",
     price: 579.99,
     packages: [],
@@ -421,6 +436,7 @@ export const products = [
   },
   {
     id: "keychron-k3",
+    category: "accessories",
     name: "Keychron K3 Wireless Mechanical Keyboard",
     price: 74.99,
     packages: [],
@@ -445,6 +461,7 @@ export const products = [
   },
   {
     id: "logitech-mx-master-3s",
+    category: "accessories",
     name: "Logitech MX Master 3S",
     price: 99.99,
     packages: [],

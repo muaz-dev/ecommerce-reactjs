@@ -1,6 +1,10 @@
 import React from "react";
+import { products } from "../../pages/products/information";
 
 function Hardware() {
+  const hardwareCategory = products.filter((product) => {
+    return product.category === "hardware";
+  });
   return (
     <section>
       <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
@@ -19,51 +23,48 @@ function Hardware() {
               </header>
 
               <a
-                href="/"
+                href="/category/hardware"
                 className="inline-block px-12 py-3 mt-8 text-sm font-medium text-white transition bg-gray-900 border border-gray-900 rounded hover:shadow focus:outline-none focus:ring"
               >
-                Shop All
+                See All
               </a>
             </div>
           </div>
 
           <div className="lg:col-span-2 lg:py-8">
             <ul className="grid grid-cols-2 gap-4">
-              <li>
-                <a href="/" className="block group">
-                  <img
-                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1598&q=80"
-                    alt=""
-                    className="object-cover w-full rounded aspect-square"
-                  />
+              {hardwareCategory?.slice(0, 2).map((item) => {
+                return (
+                  <li key={item.id}>
+                    <a href={`/product/${item.id}`} className="block group">
+                      <img
+                        src={item.image}
+                        alt=""
+                        className="object-cover w-full rounded aspect-square"
+                      />
 
-                  <div className="mt-3">
-                    <h3 className="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                      Simple Watch
-                    </h3>
+                      <div className="mt-3">
+                        <h3 className="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
+                          {item.name}
+                        </h3>
 
-                    <p className="mt-1 text-sm text-gray-700">$150</p>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="/" className="block group">
-                  <img
-                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1598&q=80"
-                    alt=""
-                    className="object-cover w-full rounded aspect-square"
-                  />
-
-                  <div className="mt-3">
-                    <h3 className="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                      Simple Watch
-                    </h3>
-
-                    <p className="mt-1 text-sm text-gray-700">$150</p>
-                  </div>
-                </a>
-              </li>
+                        <p className="mt-1 text-sm text-gray-700">
+                          $
+                          {
+                            (
+                              item.sizes as {
+                                name: string;
+                                inStock: boolean;
+                                price: number;
+                              }[]
+                            )[0]?.price
+                          }
+                        </p>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

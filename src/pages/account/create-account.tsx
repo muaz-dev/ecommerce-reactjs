@@ -1,6 +1,36 @@
-import React from "react";
+import { useState } from "react";
+import axios from "axios";
 
 function CreateAccount() {
+  const [name, setName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+
+  const postData = async () => {
+    const url = "http://localhost:4000/users/register"; // Replace with your API endpoint
+    const data = {
+      // Your request payload
+      name: name,
+      lastName: lastName,
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+    };
+
+    try {
+      const response = await axios.post(url, data);
+      console.log("Response:", response.data);
+      // Handle response here
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle error here
+    }
+  };
+
+  console.log(name, lastName, email, password, confirmPassword);
+
   return (
     <>
       <section className="bg-white">
@@ -8,7 +38,7 @@ function CreateAccount() {
           <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
             <img
               alt="Night"
-              src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               className="absolute inset-0 h-full w-full object-cover opacity-80"
             />
 
@@ -29,12 +59,13 @@ function CreateAccount() {
               </a>
 
               <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                Welcome to Squid 🦑
+                Welcome to Defa 🦑
               </h2>
 
               <p className="mt-4 leading-relaxed text-white/90">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
+                The ultimate destination for cutting-edge technology solutions.
+                Explore our extensive range of software and hardware products,
+                designed to redefine possibilities.
               </p>
             </div>
           </section>
@@ -83,7 +114,12 @@ function CreateAccount() {
                     type="text"
                     id="FirstName"
                     name="first_name"
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                    style={{ border: "1px solid gray", height: "35px" }}
+                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-2"
                   />
                 </div>
 
@@ -98,8 +134,13 @@ function CreateAccount() {
                   <input
                     type="text"
                     id="LastName"
+                    value={lastName}
+                    onChange={(e) => {
+                      setLastName(e.target.value);
+                    }}
                     name="last_name"
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    style={{ border: "1px solid gray", height: "35px" }}
+                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-2"
                   />
                 </div>
 
@@ -113,9 +154,14 @@ function CreateAccount() {
 
                   <input
                     type="email"
+                    style={{ border: "1px solid gray", height: "35px" }}
                     id="Email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                     name="email"
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-2"
                   />
                 </div>
 
@@ -129,9 +175,14 @@ function CreateAccount() {
 
                   <input
                     type="password"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
                     id="Password"
                     name="password"
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    style={{ border: "1px solid gray", height: "35px" }}
+                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-2"
                   />
                 </div>
 
@@ -147,7 +198,12 @@ function CreateAccount() {
                     type="password"
                     id="PasswordConfirmation"
                     name="password_confirmation"
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    value={confirmPassword}
+                    onChange={(e) => {
+                      setConfirmPassword(e.target.value);
+                    }}
+                    style={{ border: "1px solid gray", height: "35px" }}
+                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-2"
                   />
                 </div>
 
@@ -157,7 +213,7 @@ function CreateAccount() {
                       type="checkbox"
                       id="MarketingAccept"
                       name="marketing_accept"
-                      className="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm"
+                      className="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm px-2"
                     />
 
                     <span className="text-sm text-gray-700">
@@ -170,11 +226,17 @@ function CreateAccount() {
                 <div className="col-span-6">
                   <p className="text-sm text-gray-500">
                     By creating an account, you agree to our
-                    <a href="/" className="text-gray-700 underline">
+                    <a
+                      href="/legal/terms-of-use"
+                      className="text-gray-700 underline"
+                    >
                       terms and conditions
                     </a>
                     and
-                    <a href="/" className="text-gray-700 underline">
+                    <a
+                      href="/legal/privacy-policy"
+                      className="text-gray-700 underline"
+                    >
                       privacy policy
                     </a>
                     .
@@ -182,7 +244,11 @@ function CreateAccount() {
                 </div>
 
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                  <button className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
+                  <button
+                    type="submit"
+                    onClick={postData}
+                    className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                  >
                     Create an account
                   </button>
 

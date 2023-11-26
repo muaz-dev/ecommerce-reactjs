@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Dashboard from "./components/Dashboard";
 // import Main from "./components/Main";
 // import Layout from "./components/Layout/navbar";
-import Login from "./components/Authentication/login";
+import Login from "./pages/account/login";
 // import Ecommenrce from "./components/Ecommerce";
 import Home from "./pages/home";
 // import Software from "./pages/products/software";
@@ -17,6 +17,11 @@ import PrivacyPolicy from "./pages/legal/privacy-policy";
 import Contact from "./pages/contact";
 import Cart from "./pages/checkout/cart";
 import Products from "./pages/products";
+import PreventRoute from "./components/Authentication/prevent-route";
+import Dashboard from "./pages/user/dashboard";
+import Software from "./pages/category/software";
+import Hardware from "./pages/category/hardware";
+import Accessories from "./pages/category/accessory";
 
 function App() {
   return (
@@ -24,24 +29,22 @@ function App() {
       <Routes>
         <Route path="*" element={<NotFount />} />
         <Route path="/" element={<Home />} />
-        {/* <Route
-          path="/dashboard"
+        <Route
+          path="/log-in"
           element={
-            <Layout>
-              <Dashboard />
-            </Layout>
+            <PreventRoute>
+              <Login />
+            </PreventRoute>
           }
-        /> */}
-        {/* <Route
-          path="/"
+        />
+        <Route
+          path="/account/create"
           element={
-            <Layout>
-              <Main />
-            </Layout>
+            <PreventRoute>
+              <CreateAccount />
+            </PreventRoute>
           }
-        /> */}
-        <Route path="/log-in" element={<Login />} />
-        <Route path="/account/create" element={<CreateAccount />} />
+        />
         {/* <Route path="/software" element={<Software />} /> */}
         <Route path="/profile" element={<Profile />} />
         <Route path="/faq" element={<FAQs />} />
@@ -53,6 +56,10 @@ function App() {
         <Route path="/checkout/cart" element={<Cart />} />
         <Route path="/product" element={<Products />} />
         <Route path="/product/:id" element={<Products />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/category/software" element={<Software />} />
+        <Route path="/category/hardware" element={<Hardware />} />
+        <Route path="/category/accessory" element={<Accessories />} />
       </Routes>
     </Router>
   );

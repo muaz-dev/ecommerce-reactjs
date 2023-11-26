@@ -1,6 +1,12 @@
 import React from "react";
+import { products } from "../../pages/products/information";
 
 function Software() {
+  const softwareCategory = products.filter((product) => {
+    return product.category === "software";
+  });
+
+  console.log("softwareCategory", softwareCategory);
   return (
     <section>
       <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
@@ -15,107 +21,54 @@ function Software() {
           </p>
         </header>
 
-        <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
-          <li>
-            <a href="/" className="block overflow-hidden group">
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
+        <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-3">
+          {softwareCategory?.slice(0, 3).map((item) => {
+            return (
+              <li key={item.id}>
+                <a
+                  href={`/product/${item.id}`}
+                  className="block overflow-hidden group"
+                >
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="h-[150px] w-full object-contain transition duration-500 group-hover:scale-105 sm:h-[150px]"
+                  />
 
-              <div className="relative pt-3 bg-white">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
+                  <div className="relative pt-3 bg-white">
+                    <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                      {item.name}
+                    </h3>
 
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
+                    <p className="mt-2">
+                      <span className="sr-only"> Regular Price </span>
 
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="/" className="block overflow-hidden group">
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
-
-              <div className="relative pt-3 bg-white">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="/" className="block overflow-hidden group">
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
-
-              <div className="relative pt-3 bg-white">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="/" className="block overflow-hidden group">
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
-
-              <div className="relative pt-3 bg-white">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
+                      <span className="tracking-wider text-gray-900">
+                        {
+                          (
+                            item.packages as {
+                              name: string;
+                              inStock: boolean;
+                              price: number;
+                            }[]
+                          )[0]?.price
+                        }
+                      </span>
+                    </p>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
         </ul>
+        <div className="flex flex-col items-center justify-end p-6">
+          <a
+            href="/category/software"
+            className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+          >
+            See All
+          </a>
+        </div>
       </div>
     </section>
   );

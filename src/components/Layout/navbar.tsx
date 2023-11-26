@@ -147,7 +147,7 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "Stores", href: "#" },
+    // { name: "Stores", href: "#" },
     { name: "Company", href: "/profile" },
   ],
 };
@@ -158,6 +158,14 @@ function classNames(...classes: any) {
 
 export default function Example() {
   const [open, setOpen] = useState(false);
+  const [refresh, setRefresh] = useState(false);
+
+  const token = localStorage.getItem("token");
+
+  const logout = (): void => {
+    localStorage.removeItem("token");
+    setRefresh(!refresh);
+  };
 
   return (
     <div className="bg-white z-50">
@@ -298,8 +306,50 @@ export default function Example() {
                     </div>
                   ))}
                 </div>
-
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                {token ? (
+                  <>
+                    <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                      <div className="flow-root">
+                        <a
+                          href="/dashboard"
+                          className="-m-2 block p-2 font-medium text-gray-900"
+                        >
+                          My Account
+                        </a>
+                      </div>
+                      <div className="flow-root">
+                        <span
+                          onClick={logout}
+                          className="-m-2 block p-2 font-medium text-gray-900"
+                        >
+                          Log Out
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                      <div className="flow-root">
+                        <a
+                          href="/log-in"
+                          className="-m-2 block p-2 font-medium text-gray-900"
+                        >
+                          Sign in
+                        </a>
+                      </div>
+                      <div className="flow-root">
+                        <a
+                          href="/account/create"
+                          className="-m-2 block p-2 font-medium text-gray-900"
+                        >
+                          Create account
+                        </a>
+                      </div>
+                    </div>
+                  </>
+                )}
+                {/* <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <a
                       href="/log-in"
@@ -316,7 +366,7 @@ export default function Example() {
                       Create account
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="border-t border-gray-200 px-4 py-6">
                   <a href="/" className="-m-2 flex items-center p-2">
@@ -491,7 +541,51 @@ export default function Example() {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                {token ? (
+                  <>
+                    <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                      <a
+                        href="/dashboard"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                      >
+                        My Account
+                      </a>
+                      <span
+                        className="h-6 w-px bg-gray-200"
+                        aria-hidden="true"
+                      />
+                      <span
+                        // href="/account/create"
+                        onClick={logout}
+                        className="text-sm font-medium text-gray-700 hover:text-gray-800 cursor-pointer"
+                      >
+                        Log Out
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                      <a
+                        href="/log-in"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                      >
+                        Sign in
+                      </a>
+                      <span
+                        className="h-6 w-px bg-gray-200"
+                        aria-hidden="true"
+                      />
+                      <a
+                        href="/account/create"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                      >
+                        Create account
+                      </a>
+                    </div>
+                  </>
+                )}
+                {/* <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <a
                     href="/log-in"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
@@ -505,7 +599,7 @@ export default function Example() {
                   >
                     Create account
                   </a>
-                </div>
+                </div> */}
 
                 <div className="hidden lg:ml-8 lg:flex">
                   <a
