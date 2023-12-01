@@ -1,31 +1,31 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function CreateAccount() {
+  const navigate = useNavigate();
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
 
-  const postData = async () => {
-    const url = "http://localhost:4000/users/register"; // Replace with your API endpoint
+  const postData = async (event: React.FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const url = "http://localhost:4000/users/register";
     const data = {
-      // Your request payload
       name: name,
       lastName: lastName,
       email: email,
       password: password,
-      confirmPassword: confirmPassword,
     };
 
     try {
       const response = await axios.post(url, data);
       console.log("Response:", response.data);
-      // Handle response here
+      navigate("/log-in");
     } catch (error) {
       console.error("Error:", error);
-      // Handle error here
     }
   };
 

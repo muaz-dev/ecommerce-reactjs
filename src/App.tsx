@@ -22,6 +22,7 @@ import Dashboard from "./pages/user/dashboard";
 import Software from "./pages/category/software";
 import Hardware from "./pages/category/hardware";
 import Accessories from "./pages/category/accessory";
+import Test from "./pages/test";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="/category/software" element={<Software />} />
         <Route path="/category/hardware" element={<Hardware />} />
         <Route path="/category/accessory" element={<Accessories />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
