@@ -24,6 +24,18 @@ export default function Example() {
 
   const [selectedPackage, setSelectedPackage] = useState(product?.packages[0]);
 
+  const addToCartData = {
+    product: product,
+    color: selectedColor ? selectedColor : "",
+    size: selectedSize ? selectedSize : "",
+    package: selectedPackage ? selectedPackage : "",
+    price: selectedPackage
+      ? selectedPackage.price
+      : selectedSize
+      ? selectedSize.price
+      : "",
+  };
+
   // const userName = localStorage.getItem("user");
   // const dataOfUser = userName && JSON.parse(userName);
   // console.log("this is user name", dataOfUser.userName);
@@ -39,7 +51,7 @@ export default function Example() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Include JWT token for authentication
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(item),
       }
@@ -55,7 +67,7 @@ export default function Example() {
   const addToCart = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     dispatch(increment());
-    addItemToCartInDB({ test: "test" });
+    addItemToCartInDB(addToCartData);
   };
 
   return (
@@ -99,13 +111,6 @@ export default function Example() {
               ) : (
                 ""
               )}
-              {/* {product ? (
-                <p className="text-3xl tracking-tight text-gray-900">
-                  {product.price}
-                </p>
-              ) : (
-                ""
-              )} */}
 
               {/* Reviews */}
               <div className="mt-6">
