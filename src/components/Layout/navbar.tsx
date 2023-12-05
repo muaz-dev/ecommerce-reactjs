@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -8,71 +8,10 @@ import {
 } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import axios from "axios";
 
 const navigation = {
   categories: [
-    // {
-    //   id: "women",
-    //   name: "Software",
-    //   featured: [
-    //     {
-    //       name: "New Arrivals",
-    //       href: "#",
-    //       imageSrc:
-    //         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
-    //       imageAlt:
-    //         "Models sitting back to back, wearing Basic Tee in black and bone.",
-    //     },
-    //     {
-    //       name: "Basic Tees",
-    //       href: "#",
-    //       imageSrc:
-    //         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
-    //       imageAlt:
-    //         "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
-    //     },
-    //   ],
-    //   sections: [
-    //     {
-    //       id: "clothing",
-    //       name: "Clothing",
-    //       items: [
-    //         { name: "Tops", href: "#" },
-    //         { name: "Dresses", href: "#" },
-    //         { name: "Pants", href: "#" },
-    //         { name: "Denim", href: "#" },
-    //         { name: "Sweaters", href: "#" },
-    //         { name: "T-Shirts", href: "#" },
-    //         { name: "Jackets", href: "#" },
-    //         { name: "Activewear", href: "#" },
-    //         { name: "Browse All", href: "#" },
-    //       ],
-    //     },
-    //     {
-    //       id: "accessories",
-    //       name: "Accessories",
-    //       items: [
-    //         { name: "Watches", href: "#" },
-    //         { name: "Wallets", href: "#" },
-    //         { name: "Bags", href: "#" },
-    //         { name: "Sunglasses", href: "#" },
-    //         { name: "Hats", href: "#" },
-    //         { name: "Belts", href: "#" },
-    //       ],
-    //     },
-    //     {
-    //       id: "brands",
-    //       name: "Brands",
-    //       items: [
-    //         { name: "Full Nelson", href: "#" },
-    //         { name: "My Way", href: "#" },
-    //         { name: "Re-Arranged", href: "#" },
-    //         { name: "Counterfeit", href: "#" },
-    //         { name: "Significant Other", href: "#" },
-    //       ],
-    //     },
-    //   ],
-    // },
     {
       id: "product",
       name: "Product",
@@ -148,10 +87,7 @@ const navigation = {
       ],
     },
   ],
-  pages: [
-    // { name: "Stores", href: "#" },
-    { name: "Company", href: "/profile" },
-  ],
+  pages: [{ name: "Company", href: "/profile" }],
 };
 
 function classNames(...classes: any) {
@@ -161,8 +97,11 @@ function classNames(...classes: any) {
 export default function Example() {
   const [open, setOpen] = useState(false);
   const [refresh, setRefresh] = useState(false);
+  const [dataInCart, setDataInCart] = useState<number>();
 
-  const count = useSelector((state: RootState) => state.addToCartReducer.value);
+  const update = useSelector(
+    (state: RootState) => state.updateCartReducer.value
+  );
 
   const token = localStorage.getItem("token");
 
@@ -170,6 +109,38 @@ export default function Example() {
     localStorage.removeItem("token");
     setRefresh(!refresh);
   };
+
+  const fetchData = async () => {
+    const token = localStorage.getItem("token");
+    const initialUserData = localStorage.getItem("user");
+    const userName = initialUserData && JSON.parse(initialUserData);
+
+    const config = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    try {
+      const response = await axios.get(
+        `http://localhost:4000/products/${userName.userName}${userName.timestamp}`,
+        config
+      );
+      if (response.data && response.data.length > 0) {
+        setDataInCart(response.data[0].cart.length);
+        // setId(response.data[0]._id);
+        console.log("whole data", response.data[0]._id);
+      }
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [update]);
 
   return (
     <div className="bg-white z-50">
@@ -238,35 +209,6 @@ export default function Example() {
                         key={category.name}
                         className="space-y-10 px-4 pb-8 pt-10 z-50 bg-white "
                       >
-                        {/* <div className="grid grid-cols-2 gap-x-4">
-                          {category.featured.map((item) => (
-                            <div
-                              key={item.name}
-                              className="group relative text-sm"
-                            >
-                              <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                <img
-                                  src={item.imageSrc}
-                                  alt={item.imageAlt}
-                                  className="object-cover object-center"
-                                />
-                              </div>
-                              <a
-                                href={item.href}
-                                className="mt-6 block font-medium text-gray-900"
-                              >
-                                <span
-                                  className="absolute inset-0 z-10"
-                                  aria-hidden="true"
-                                />
-                                {item.name}
-                              </a>
-                              <p aria-hidden="true" className="mt-1">
-                                Shop now
-                              </p>
-                            </div>
-                          ))}
-                        </div> */}
                         {category.sections.map((section) => (
                           <div key={section.name}>
                             <p
@@ -353,24 +295,6 @@ export default function Example() {
                     </div>
                   </>
                 )}
-                {/* <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                  <div className="flow-root">
-                    <a
-                      href="/log-in"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Sign in
-                    </a>
-                  </div>
-                  <div className="flow-root">
-                    <a
-                      href="/account/create"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Create account
-                    </a>
-                  </div>
-                </div> */}
 
                 <div className="border-t border-gray-200 px-4 py-6">
                   <a href="/" className="-m-2 flex items-center p-2">
@@ -392,10 +316,6 @@ export default function Example() {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
-        </p>
-
         <nav
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
@@ -459,38 +379,6 @@ export default function Example() {
                               <div className="relative bg-white z-50">
                                 <div className="mx-auto max-w-7xl px-8">
                                   <div className="grid grid-cols-1 gap-x-8 gap-y-10 py-16">
-                                    {/* <div className="col-start-2 grid grid-cols-2 gap-x-8">
-                                      {category.featured.map((item) => (
-                                        <div
-                                          key={item.name}
-                                          className="group relative text-base sm:text-sm"
-                                        >
-                                          <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                            <img
-                                              src={item.imageSrc}
-                                              alt={item.imageAlt}
-                                              className="object-cover object-center"
-                                            />
-                                          </div>
-                                          <a
-                                            href={item.href}
-                                            className="mt-6 block font-medium text-gray-900"
-                                          >
-                                            <span
-                                              className="absolute inset-0 z-10"
-                                              aria-hidden="true"
-                                            />
-                                            {item.name}
-                                          </a>
-                                          <p
-                                            aria-hidden="true"
-                                            className="mt-1"
-                                          >
-                                            Shop now
-                                          </p>
-                                        </div>
-                                      ))}
-                                    </div> */}
                                     <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
                                       {category.sections.map((section) => (
                                         <div key={section.name}>
@@ -642,7 +530,8 @@ export default function Example() {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      {count}
+                      {/* {count} */}
+                      {dataInCart}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </a>
