@@ -22,6 +22,7 @@ import Dashboard from "./pages/user/dashboard";
 import Software from "./pages/category/software";
 import Hardware from "./pages/category/hardware";
 import Accessories from "./pages/category/accessory";
+import CheckOut from "./pages/checkout/check-out";
 import Test from "./pages/test";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             </PreventRoute>
           }
         />
+
         <Route
           path="/account/create"
           element={
@@ -47,6 +49,7 @@ function App() {
           }
         />
         {/* <Route path="/software" element={<Software />} /> */}
+
         <Route path="/profile" element={<Profile />} />
         <Route path="/faq" element={<FAQs />} />
         <Route path="/contact" element={<Contact />} />
@@ -55,6 +58,7 @@ function App() {
         <Route path="/legal/terms-of-use" element={<TermOfUse />} />
         <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/checkout/cart" element={<Cart />} />
+        <Route path="/checkout/puschase" element={<CheckOut />} />
         <Route path="/product" element={<Products />} />
         <Route path="/product/:id" element={<Products />} />
         <Route path="/dashboard" element={<Dashboard />} />

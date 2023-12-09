@@ -37,11 +37,6 @@ export default function Example() {
       : "",
   };
 
-  // const userName = localStorage.getItem("user");
-  // const dataOfUser = userName && JSON.parse(userName);
-  // console.log("this is user name", dataOfUser.userName);
-  // console.log("this is user name 2", dataOfUser.timestamp);
-
   const addItemToCartInDB = async (item: any) => {
     const token = localStorage.getItem("token");
     const initialUserData = localStorage.getItem("user");

@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import axios from "axios";
 import { update } from "../../features/cart/update-cart";
+import { addItems } from "../../features/cart/check-out";
 import { useDispatch } from "react-redux";
-import { Result } from "postcss";
+import { useNavigate } from "react-router-dom";
 
 interface Product {
   id: string;
@@ -23,6 +24,7 @@ interface CartItem {
 }
 
 function Cart() {
+  const navigate = useNavigate();
   const [data, setData] = useState<CartItem[]>([]);
   const [id, setId] = useState("");
   const [selectedItems, setSelectedItems] = useState<CartItem[]>([]);
@@ -114,7 +116,14 @@ function Cart() {
     return parseFloat(result.toFixed(2));
   }
 
-  console.log("data", data);
+  const checkOut = (event: React.FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    dispatch(addItems(selectedItems));
+
+    navigate("/checkout/puschase");
+  };
+
+  console.log("seleted items", selectedItems);
   return (
     <Layout>
       <section>
@@ -226,12 +235,12 @@ function Cart() {
                   </dl>
 
                   <div className="flex justify-end">
-                    <a
-                      href="/"
+                    <button
+                      onClick={checkOut}
                       className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
                     >
                       Checkout
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
