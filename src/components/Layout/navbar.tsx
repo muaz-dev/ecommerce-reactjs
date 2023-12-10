@@ -2,7 +2,6 @@ import { Fragment, useState, useEffect } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  MagnifyingGlassIcon,
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
@@ -130,7 +129,6 @@ export default function Example() {
       );
       if (response.data && response.data.length > 0) {
         setDataInCart(response.data[0].cart.length);
-        // setId(response.data[0]._id);
         console.log("whole data", response.data[0]._id);
       }
     } catch (error) {
@@ -522,7 +520,7 @@ export default function Example() {
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <a
-                    href="/checkout/cart"
+                    href={token ? "/checkout/cart" : "/log-in"}
                     className="group -m-2 flex items-center p-2"
                   >
                     <ShoppingBagIcon

@@ -14,7 +14,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       1on1 Coaching
@@ -23,7 +23,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Company Review
@@ -32,7 +32,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Accounts Review
@@ -41,7 +41,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       HR Consulting
@@ -50,7 +50,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       SEO Optimisation
@@ -65,7 +65,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       About
@@ -74,7 +74,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Meet the Team
@@ -83,7 +83,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Accounts Review
@@ -116,7 +116,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Live Chat
@@ -171,7 +171,7 @@ function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       Marketing Calendar
@@ -180,7 +180,7 @@ function Footer() {
 
                   <li>
                     <a
-                      href="/"
+                      href="/comming-soon"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       SEO Infographics
@@ -192,7 +192,7 @@ function Footer() {
               <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
                 <li>
                   <a
-                    href="/"
+                    href="/comming-soon"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"
@@ -216,7 +216,7 @@ function Footer() {
 
                 <li>
                   <a
-                    href="/"
+                    href="/comming-soon"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"
@@ -240,7 +240,7 @@ function Footer() {
 
                 <li>
                   <a
-                    href="/"
+                    href="/comming-soon"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"
@@ -260,7 +260,7 @@ function Footer() {
 
                 <li>
                   <a
-                    href="/"
+                    href="/comming-soon"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"
@@ -284,7 +284,7 @@ function Footer() {
 
                 <li>
                   <a
-                    href="/"
+                    href="/comming-soon"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"

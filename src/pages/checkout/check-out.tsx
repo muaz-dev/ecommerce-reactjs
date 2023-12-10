@@ -12,6 +12,10 @@ function Checkout() {
   const [cardExpirationDate, setCardExpirationDate] = useState<number>(0);
   const [cardCVV, setCardCVV] = useState<number>(0);
 
+  const data = useSelector(
+    (state: RootState) => state.purchasedItemsReducer.items
+  );
+
   const purchaseData = {
     name: name,
     address: address,
@@ -20,6 +24,7 @@ function Checkout() {
     cardNumber: cardNumber,
     cardExpirationDate: cardExpirationDate,
     cardCVV: cardCVV,
+    products: data,
   };
 
   const checkForm = () => {
@@ -64,9 +69,6 @@ function Checkout() {
     event.preventDefault();
     addPurchase(purchaseData);
   };
-  const data = useSelector(
-    (state: RootState) => state.purchasedItemsReducer.items
-  );
 
   console.log("this is the data from redux", data);
   return (

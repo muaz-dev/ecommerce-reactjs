@@ -5,6 +5,7 @@ import Navbar from "../../components/Layout/navbar";
 import Footer from "../../components/Layout/footer";
 import { useParams } from "react-router-dom";
 import { products } from "./information";
+import { useNavigate } from "react-router-dom";
 // import { increment } from "../../features/cart/add-to-cart";
 import { update } from "../../features/cart/update-cart";
 import { useDispatch } from "react-redux";
@@ -14,9 +15,11 @@ function classNames(...classes: any) {
 }
 
 export default function Example() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   let { id } = useParams();
   const product = products.find((product) => product.id === id);
+  const token = localStorage.getItem("token");
 
   const [selectedColor, setSelectedColor] = useState(
     product?.colors?.[0] || ""
@@ -62,8 +65,12 @@ export default function Example() {
 
   const addToCart = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    dispatch(update());
-    addItemToCartInDB(addToCartData);
+    if (token) {
+      dispatch(update());
+      addItemToCartInDB(addToCartData);
+    } else {
+      navigate("/log-in");
+    }
   };
 
   return (

@@ -23,6 +23,7 @@ import Software from "./pages/category/software";
 import Hardware from "./pages/category/hardware";
 import Accessories from "./pages/category/accessory";
 import CheckOut from "./pages/checkout/check-out";
+import ComingSoon from "./pages/comming-soon";
 import Test from "./pages/test";
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
         <Route path="/category/hardware" element={<Hardware />} />
         <Route path="/category/accessory" element={<Accessories />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/comming-soon" element={<ComingSoon />} />
       </Routes>
     </Router>
   );
