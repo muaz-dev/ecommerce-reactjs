@@ -138,7 +138,7 @@ export default function Example() {
 
   useEffect(() => {
     fetchData();
-  }, [update]);
+  }, [update, refresh]);
 
   return (
     <div className="bg-white z-50">
@@ -216,7 +216,6 @@ export default function Example() {
                               {section.name}
                             </p>
                             <ul
-                              // role="list"
                               aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
                               className="mt-6 flex flex-col space-y-6"
                             >
@@ -475,21 +474,6 @@ export default function Example() {
                     </div>
                   </>
                 )}
-                {/* <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a
-                    href="/log-in"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Sign in
-                  </a>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a
-                    href="/account/create"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Create account
-                  </a>
-                </div> */}
 
                 <div className="hidden lg:ml-8 lg:flex">
                   <a
@@ -506,17 +490,6 @@ export default function Example() {
                   </a>
                 </div>
 
-                {/* Search */}
-                {/* <div className="flex lg:ml-6">
-                  <a href="/" className="p-2 text-gray-400 hover:text-gray-500">
-                    <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon
-                      className="h-6 w-6"
-                      aria-hidden="true"
-                    />
-                  </a>
-                </div> */}
-
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <a
@@ -529,7 +502,7 @@ export default function Example() {
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
                       {/* {count} */}
-                      {dataInCart}
+                      {token ? dataInCart : 0}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </a>

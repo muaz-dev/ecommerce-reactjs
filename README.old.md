@@ -1,3 +1,9 @@
+# Credited to
+
+https://www.hyperui.dev/components/marketing/sections
+https://www.freepik.com/
+https://tailwindui.com/components
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

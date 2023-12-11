@@ -17,6 +17,7 @@ export default function Dashboard() {
   const [data, setData] = useState([]);
   const [profileData, setProfileData] = useState({});
   const [cartData, setCartData] = useState([]);
+  const [purchasedData, setPurchasedData] = useState([]);
 
   const navigation = [
     { name: "Profile", component: "Profile" },
@@ -47,6 +48,7 @@ export default function Dashboard() {
         // setId(response.data[0]._id);
         setProfileData(response.data[0].userDetail);
         setCartData(response.data[0].cart);
+        setPurchasedData(response.data[0].purchases);
         console.log("whole data", response.data[0]._id);
       }
     } catch (error) {
@@ -197,7 +199,7 @@ export default function Dashboard() {
       </Disclosure>
       {activeComponent === "Profile" && <Profile data={profileData} />}
       {activeComponent === "Cart" && <Cart data={cartData} />}
-      {activeComponent === "Purchase" && <Purchase data={data} />}
+      {activeComponent === "Purchase" && <Purchase data={purchasedData} />}
       <Footer />
     </>
   );

@@ -2,8 +2,11 @@ import { useState } from "react";
 import Layout from "../../components/Layout";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Checkout() {
+  const navigate = useNavigate();
   const [name, setName] = useState<string>("");
   const [address, setAddress] = useState<string>("");
   const [phone, setPhone] = useState<number>(0);
@@ -15,6 +18,20 @@ function Checkout() {
   const data = useSelector(
     (state: RootState) => state.purchasedItemsReducer.items
   );
+
+  const showAlert = () => {
+    Swal.fire({
+      title: "Success!",
+      text: "Your order was successful.",
+      icon: "success",
+      timer: 3000, // 3000 ms = 3 seconds
+      timerProgressBar: true,
+      showConfirmButton: false,
+      willClose: () => {
+        console.log("Alert closed");
+      },
+    });
+  };
 
   const purchaseData = {
     name: name,
@@ -68,6 +85,8 @@ function Checkout() {
   const finalPurchase = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     addPurchase(purchaseData);
+    showAlert();
+    navigate("/");
   };
 
   console.log("this is the data from redux", data);

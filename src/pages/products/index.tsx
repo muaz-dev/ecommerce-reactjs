@@ -6,7 +6,7 @@ import Footer from "../../components/Layout/footer";
 import { useParams } from "react-router-dom";
 import { products } from "./information";
 import { useNavigate } from "react-router-dom";
-// import { increment } from "../../features/cart/add-to-cart";
+import Swal from "sweetalert2";
 import { update } from "../../features/cart/update-cart";
 import { useDispatch } from "react-redux";
 
@@ -20,6 +20,20 @@ export default function Example() {
   let { id } = useParams();
   const product = products.find((product) => product.id === id);
   const token = localStorage.getItem("token");
+
+  const showAlert = () => {
+    Swal.fire({
+      title: "Success!",
+      text: "The item was successfully added to the cart.",
+      icon: "success",
+      timer: 3000, // 3000 ms = 3 seconds
+      timerProgressBar: true,
+      showConfirmButton: false,
+      willClose: () => {
+        console.log("Alert closed");
+      },
+    });
+  };
 
   const [selectedColor, setSelectedColor] = useState(
     product?.colors?.[0] || ""
@@ -68,6 +82,7 @@ export default function Example() {
     if (token) {
       dispatch(update());
       addItemToCartInDB(addToCartData);
+      showAlert();
     } else {
       navigate("/log-in");
     }
